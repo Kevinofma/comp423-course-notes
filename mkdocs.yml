@@ -1,6 +1,9 @@
 site_name: COMP423 Course Notes
 theme:
   name: material
+  palette: 
+    scheme: slate
+    primary: deep orange
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true

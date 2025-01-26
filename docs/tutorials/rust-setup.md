@@ -1,10 +1,11 @@
-# Setting up a dev container for Rust
-
+# How to Use Rust
 * Primary author: [Kevin Ma](https://github.com/Kevinofma)
 
 * Reviewer: [Krisha Avula](https://github.com/krisha188)
 
-How To Set Up Your Rust Dev Container With Docker and Github
+---
+How To Set Up Your Rust Dev Container
+---
 
 Step 1: Inital Setup
 
@@ -17,7 +18,7 @@ mkdir rust-project
 cd rust-project
 ```
 
-(c) Initalize a new Git Repository
+(C) Initalize a new Git Repository
 
 ``` bash
 git init
@@ -28,7 +29,7 @@ git init
     If you would like, you can now create a new repository page on Github so that
     you can link your local repository to Github
 
-(d) Ensure Docker and VS Code are installed before proceeding
+(D) Ensure Docker and VS Code are installed before proceeding
 
 Step 2: Setting up the Development Environment
 
