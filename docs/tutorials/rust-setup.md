@@ -47,10 +47,13 @@ Step 2: Setting up the Development Environment
 
 (D) The devcontainer.json file defines the configuration for your development environment. Here, we're specifying the following:
 
-name: A descriptive name for your dev container.
-image: The Docker image to use, in this case, the latest version of a Rust environment. Microsoft maintains a collection of base images for many programming language environments, but you can also create your own!
-customizations: Adds useful configurations to VS Code, Here we are using the rust-analyzer VSCode plugin by the Rust Programming Language Group.
-postCreateCommand: A command to run after the container is created. In our case, we will be running cargo new project --bin --vcs none.
+* Name: a descriptive name for your dev container
+
+* Image: the Docker image to use, in this case, the latest version of a Rust environment. Microsoft maintains a collection of base images for many programming language environments, but you can also create your own!
+
+* Customizations: adds useful configurations to VS Code, Here we are using the rust-analyzer VSCode plugin by the Rust Programming Language Group
+
+* PostCreateCommand: a command to run after the container is created. In our case, we will be running cargo new project --bin --vcs none
 
 !!! info "Understanding the Post Create Command"
 
