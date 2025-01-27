@@ -1,7 +1,9 @@
-# How to Use Rust
+# How to Use Rust :fontawesome-brands-rust:
 * Primary author: [Kevin Ma](https://github.com/Kevinofma)
 
 * Reviewer: [Krisha Avula](https://github.com/krisha188)
+
+* Adapted from <https://comp423-25s.github.io/resources/MkDocs/tutorial/#understanding-your-cicd-workflow>
 
 ## Prerequisites
 Before completing this tutorial make sure you have:
@@ -73,12 +75,19 @@ Before completing this tutorial make sure you have:
     * ```image```: the Docker image to use, in this case, the latest version of a Rust environment. Microsoft maintains a collection of base images for many programming language environments, but you can also create your own!
 
     * ```customizations```: adds useful configurations to VS Code, Here we are using the rust-analyzer VSCode plugin by the Rust Programming Language Group
-
-    * ```postCreateCommand```: a command to run after the container is created. In our case, we will be running cargo new project --bin --vcs none
-
-!!! info "Understanding the Post Create Command"
-
-    Similar to GCC and the C programming language, Cargo is rust's program manager and build system. The new command tells Cargo to create a new project directory with whatever name you decide to put after the new command and will initalize a directory with your project name, an src directory, and a starter main.rs rust file. By default, the Cargo new command will automatically create a library project and a git repository on your behalf. To make a executable binary project, we use the --bin flag and since we already made a git repository earlier, we can turn this off using the --vcs none flag.
+    
+    ``` JSON
+    {
+      "name": "Rust Dev Container",
+      "image": "mcr.microsoft.com/devcontainers/rust:latest",
+      "customizations": {
+          "vscode": {
+          "settings": {},
+          "extensions": ["rust-lang.rust-analyzer"]
+        }
+      }
+    }
+    ```
 
 ### Step 3: Reopen the Project in a VSCode Dev Container
 
@@ -91,3 +100,65 @@ Before completing this tutorial make sure you have:
     Rustc 1.83.0 should be the current version as of Janurary 26, 2025 
 
 Congratulations! You have created your first rust dev container.
+
+Creating a Basic Rust Program
+
+Step 1: Initalizing and Creating Your First Rust Project
+
+1. Open a new terminal in VS Code and run the following command:
+
+    ```bash
+    cargo new your-project-name --bin --vcs none
+    ```
+
+    !!! info "Cargo"
+
+        Similar to GCC and the C programming language, Cargo is rust's program manager and build system. The new command tells Cargo to create a new project directory with whatever name you decide to put after the new command and will initalize a directory with your project name, an src directory, and a starter main.rs rust file. By default, the Cargo new command will automatically create a library project and a git repository on your behalf. To make a executable binary project, we use the --bin flag and since we already made a git repository earlier, we can turn this off using the --vcs none flag.
+
+2. Navigate to your newly created main.rs file found in ```/your-project-name/src```. Your main.rs file should look like the following
+
+    ```rust
+    fn main() {
+        println!("Hello, world!");
+    }
+    ```
+
+    MAKE AN INFO ADMONITION OF THIS:
+    Title: Explaning main.rs
+    Body:
+        1. ```fn```: This keyword declares a function in Rust. It is used to define the beginning of a function declaration.
+        2. ```main```: This is the name of the function. In Rust, main is a special function because it's the entry point of any executable program. When you run a Rust program, the main function is the first code that gets executed.
+        3. ```()```: These parentheses are part of the function declaration syntax. In this case, main takes no arguments, so the parentheses are empty.
+        4. ```{``` and ```}```: These curly braces define the body of the function. Any code within these braces is part of the main function.
+        5. ```println!("Hello, world!);```: This is a rust macro. It takes the string "Hello, world!" and prints it to the terminal. The ```!``` denotes that this is a rust macro as opposed to a started rust function call. Macros allow the function to change their behavior and generate code based on the number or type of arguments passed through the function, allowing for function overloading and other usefull tricks. In this case, the rust macro we are using is println. Similar to C or Java, the function call ends with ```;```
+
+    
+    If you would like, replace ```"Hello, world!"``` with whatever you wish to print in the terminal, for the purposes of this tutorial, we are changing the string to ```"Hello COMP423"```
+
+Step 2: Building and Running Your Rust Project
+
+1. To run your code, in the terminal, use the command
+
+    ```bash
+    cargo build
+    ```
+
+    This creates an executable object file located under a new directory under your project in ```/target/debug```.
+
+    CREATE A NOTE ADMONITION with this:
+    body: An equivalent to this that you have seen before is running the ```GCC -o your-project-name main.c``` command from COMP 211.
+
+2. You can then run this file using by doing ```./your-project-name```
+
+3. Alternatively, you can build your executable object and run your code in one line using the command:
+
+    ```bash
+    cargo run
+    ```
+
+    This does the same as running the two commands above all in one line!
+
+
+Congratulations, you have created your first rust project!
+
+
