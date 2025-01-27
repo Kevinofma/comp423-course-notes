@@ -5,6 +5,9 @@
 
 * Adapted from <https://comp423-25s.github.io/resources/MkDocs/tutorial/#understanding-your-cicd-workflow>
 
+## Intro
+Rust is a programming language with a large emphasis on performance and type safety. In this tutorial, we are creating a rust dev container and building and running our first rust program.
+
 ## Prerequisites
 Before completing this tutorial make sure you have:
 
