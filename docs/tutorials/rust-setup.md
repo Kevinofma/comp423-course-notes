@@ -51,7 +51,7 @@ Before completing this tutorial make sure you have:
     2.  Create a new repository
         * Fill in the details for your repositories name and description as you would like
         * Chose to make the repository private or public
-        * Add a README or gitignore file as you would like
+        * Do not initialize the repository with a README, .gitignore, or license.
     3.  Link your repository
     ``` bash
     git remote add origin https://github.com/username/projectname.git
@@ -104,9 +104,9 @@ Before completing this tutorial make sure you have:
 
 Congratulations! You have created your first rust dev container.
 
-Creating a Basic Rust Program
+## Creating a Basic Rust Program
 
-Step 1: Initalizing and Creating Your First Rust Project
+### Step 1: Initalizing and Creating Your First Rust Project
 
 1. Open a new terminal in VS Code and run the following command:
 
@@ -126,9 +126,8 @@ Step 1: Initalizing and Creating Your First Rust Project
     }
     ```
 
-    MAKE AN INFO ADMONITION OF THIS:
-    Title: Explaning main.rs
-    Body:
+    !!! info "Explaning main.rs"
+    
         1. ```fn```: This keyword declares a function in Rust. It is used to define the beginning of a function declaration.
         2. ```main```: This is the name of the function. In Rust, main is a special function because it's the entry point of any executable program. When you run a Rust program, the main function is the first code that gets executed.
         3. ```()```: These parentheses are part of the function declaration syntax. In this case, main takes no arguments, so the parentheses are empty.
@@ -138,7 +137,7 @@ Step 1: Initalizing and Creating Your First Rust Project
     
     If you would like, replace ```"Hello, world!"``` with whatever you wish to print in the terminal, for the purposes of this tutorial, we are changing the string to ```"Hello COMP423"```
 
-Step 2: Building and Running Your Rust Project
+### Step 2: Building and Running Your Rust Project
 
 1. To run your code, in the terminal, use the command
 
@@ -148,8 +147,8 @@ Step 2: Building and Running Your Rust Project
 
     This creates an executable object file located under a new directory under your project in ```/target/debug```.
 
-    CREATE A NOTE ADMONITION with this:
-    body: An equivalent to this that you have seen before is running the ```GCC -o your-project-name main.c``` command from COMP 211.
+    !!! info "Note"
+        An equivalent to this that you have seen before is running the ```GCC -o your-project-name main.c``` command from COMP 211.
 
 2. You can then run this file using by doing ```./your-project-name```
 
